@@ -21,11 +21,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v2
-        with:
-          api-level: 30
-          ndk-version: '21.0.6113669'
-          cmake-version: '3.10.2.4988404'
+        uses: android-actions/setup-android@v3
 
       - name: Install apksigner and zipalign
         run: |
