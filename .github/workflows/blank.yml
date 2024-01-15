@@ -1,0 +1,22 @@
+name: CI
+
+on:
+
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: 10406996
+
+      - run: apksigner -v
