@@ -21,8 +21,12 @@ jobs:
           distribution: 'temurin'
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+        uses: actions/setup-android@v2
         with:
-          cmdline-tools-version: 10406996
+          api-level: 30
+          ndk-version: '21.0.6113669'
+          cmake-version: '3.10.2.4988404'
 
-      - run: apksigner -v
+      - name: Install apksigner and zipalign
+        run: |
+          echo "y" | sdkmanager --install "build-tools;30.0.1"
