@@ -21,7 +21,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Setup Android SDK
-        uses: actions/setup-android@v2
+        uses: android-actions/setup-android@v2
         with:
           api-level: 30
           ndk-version: '21.0.6113669'
